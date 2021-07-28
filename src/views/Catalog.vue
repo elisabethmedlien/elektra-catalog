@@ -5,7 +5,7 @@
   <div class="inventory" v-if='products.length'>
     <div class="card" v-for="product in products" v-bind:key="product.name">
 
-        <template v-if='product.name.toLowerCase().includes(searchString)' >
+        <template v-if='product.name.toLowerCase().includes(searchString) || product.description.toLowerCase().includes(searchString)' >
           <Product :product="product" /> 
         </template>
 
