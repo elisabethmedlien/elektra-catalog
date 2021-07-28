@@ -1,10 +1,11 @@
 <template>
+  <FlipImage :img="product.image" :qr=product.id />
 
-  <div>
+  <!-- <div>
     <figure>
       <img v-bind:src='product.image' width="150" >
     </figure>
-  </div>
+  </div> -->
 
   <div>
     <h2 class="product_name">{{ product.name }}</h2>
@@ -20,9 +21,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import FlipImage from "./FlipImage.vue";
 
 export default defineComponent({
   name: 'Product',
+  components: {
+    FlipImage
+  },
   props: {
     product: {}
   }
@@ -34,8 +39,6 @@ export default defineComponent({
 
   div:first-of-type {
     flex-grow: 0;
-    margin: 0;
-    margin-right: 15px;
 
     display: flex;
     flex-direction: column;
@@ -50,12 +53,6 @@ export default defineComponent({
     flex-shrink: 1;
   }
 
-  figure {
-    margin: 0;
-  }
-
-  img {
-  }
 
   h2 {
     text-shadow: 0px 1px black;
