@@ -18,7 +18,7 @@ export default defineComponent({
   methods: {
     signalInput: function(e:Event){
       const target = e.target as HTMLTextAreaElement;
-      this.$emit("oninput", target.value);
+      this.$emit("oninput", target.value.toLowerCase());
     }
 
   }

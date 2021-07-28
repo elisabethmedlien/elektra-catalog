@@ -4,7 +4,11 @@
 
   <div class="inventory" v-if='products.length'>
     <div class="card" v-for="product in products" v-bind:key="product.name">
-      <Product :product="product" /> 
+
+        <template v-if='product.name.toLowerCase().includes(searchString)' >
+          <Product :product="product" /> 
+        </template>
+
     </div>
   </div>
 
@@ -44,12 +48,14 @@ export default defineComponent({
   },
   data () {
     return {
-      products: []
+      products: [],
+      searchString: ""
     }
   },
   methods: {
     handleSearchString(value:string) {
-      console.log('Searching for: ', value);
+      this.searchString = value;
+      //console.log('Searching for: ', value);
     }
   },
   beforeCreate() {
