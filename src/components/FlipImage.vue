@@ -32,10 +32,9 @@ export default defineComponent({
 
 .flip-box {
   background-color: transparent;
-  padding: 15px;
-  margin: 15px;
-  width: 200px;
-  border: 0.5px solid rgba(255,255,255,0.1);
+  margin: 15px 0;
+  min-width: 150px;
+  height: auto;
   perspective: 1000px;
 }
 
@@ -61,7 +60,7 @@ export default defineComponent({
 }
 
 .flip-box-front {
-  /* background-color: rgba(255,255,255,0.02); */
+  background-color: rgba(255,255,255,0.01);
   color: black;
 }
 
@@ -80,7 +79,7 @@ figure {
 }
 
 img {
-  width: 150px;
+  width: 135px;
 }
 
 </style>
