@@ -21,11 +21,7 @@ export default defineComponent({
       this.$emit("oninput", target.value);
     }
 
-  },
-  // mounted() {
-  //   // Instead of calling the method we emit an event
-  //   this.$emit('onchange', this.value);
-  // }
+  }
 });
 
 </script>
