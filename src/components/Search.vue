@@ -1,5 +1,5 @@
 <template>
-<input type="search" />
+<input type="search" placeholder="Søk etter produkter.." />
 
 </template>
 
@@ -21,6 +21,10 @@ input[type="search"] {
   color:white;
   border-style: none;
   border-bottom: rgba(255,255,255, 0.5) 0.5px solid;
+}
+
+input[type="search"]:focus-visible {
+    outline:none;
 }
 
 input[type="search"]::-webkit-search-decoration,
