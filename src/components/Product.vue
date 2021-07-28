@@ -12,7 +12,7 @@
     <small> Plassering: {{product.placement}} </small>
 
     <p>{{product.description}}</p>
-    <p class="price"> {{product.price}} ;- </p>
+    <p class="price"> {{product.price}},- </p>
     <a class="button orange-bg-color" :href="product.link" target="_blank" rel="no-follow"> Link til info </a>
   </div>
 
