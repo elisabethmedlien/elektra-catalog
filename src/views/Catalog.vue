@@ -1,6 +1,6 @@
 <template>
   <Header title="ElektraCatalog"/>
-  <Search />
+  <Search @oninput="handleSearchString" />
 
   <div class="inventory" v-if='products.length'>
     <div class="card" v-for="product in products" v-bind:key="product.name">
@@ -34,8 +34,6 @@ interface ProductItem {
   link: string
 }
 
-
-
 export default defineComponent({
   name: 'Catalog',
   components: {
@@ -46,6 +44,11 @@ export default defineComponent({
   data () {
     return {
       products: []
+    }
+  },
+  methods: {
+    handleSearchString(value:string) {
+      console.log('Searching for: ', value);
     }
   },
   beforeCreate() {

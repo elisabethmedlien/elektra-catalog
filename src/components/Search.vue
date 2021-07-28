@@ -1,5 +1,6 @@
 <template>
-<input type="search" placeholder="Søk etter produkter.." />
+
+  <input type="search" placeholder="Søk etter produkter.." v-on:input="signalInput"  />
 
 </template>
 
@@ -8,7 +9,23 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Search',
-  props: {}
+    props: {
+    method: { type: Function },
+  },
+  data() {
+    return { value: 'search_string.' };
+  },
+  methods: {
+    signalInput: function(e:Event){
+      const target = e.target as HTMLTextAreaElement;
+      this.$emit("oninput", target.value);
+    }
+
+  },
+  // mounted() {
+  //   // Instead of calling the method we emit an event
+  //   this.$emit('onchange', this.value);
+  // }
 });
 
 </script>
