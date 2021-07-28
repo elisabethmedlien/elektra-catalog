@@ -25,6 +25,7 @@ import firebase from "firebase/app";
 import "@firebase/storage";
 
 interface ProductItem {
+  id: number,
   name: string,
   description: string,
   image: string,
@@ -82,6 +83,7 @@ export default defineComponent({
 
         storageRef.getDownloadURL().then((res:string) => {
           let productItem:ProductItem = {
+          id: item.id,
           name: item.name, 
           description: item.description, 
           image: res, 
