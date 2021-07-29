@@ -6,8 +6,7 @@
         <img v-bind:src='img'>
       </figure>
       <div class="flip-box-back">
-        <!-- <h2>QR CODE</h2> -->
-          <canvas v-bind:id="'canvas-' + qr"></canvas>
+        <canvas v-bind:id="'canvas-' + qr"></canvas>
       </div>
     </div>
   </div>

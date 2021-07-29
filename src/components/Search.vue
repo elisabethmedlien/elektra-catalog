@@ -1,6 +1,9 @@
 <template>
 
-  <input type="search" placeholder="Søk etter produkter.." v-on:input="signalInput"  />
+  <div class="wrapper"> 
+    <span class="material-icons">search</span>
+    <input type="search" placeholder="Søk etter produkter.." v-on:input="signalInput"  />
+  </div>
 
 </template>
 
@@ -33,7 +36,7 @@ input[type="search"] {
   width: 100%;
   color:white;
   border-style: none;
-  border-bottom: rgba(255,255,255, 0.5) 0.5px solid;
+  /* border-bottom: rgba(255,255,255, 0.5) 0.5px solid; */
 }
 
 input[type="search"]:focus-visible {
@@ -46,5 +49,21 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    min-width: 100px;
+    border-bottom: 0.5px solid rgba(255,255,255,0.6);
+    width: 90%;
+    margin:auto;
+    padding-bottom:7px;
+
+  }
+
+  span {
+    margin-right: 10px;
+  }
+
 
 </style>
