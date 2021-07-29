@@ -6,8 +6,8 @@
         <img v-bind:src='img'>
       </figure>
       <div class="flip-box-back">
-        <h2>QR CODE</h2>
-        <p>Here comes qr code</p>
+        <!-- <h2>QR CODE</h2> -->
+          <canvas v-bind:id="'canvas-' + qr"></canvas>
       </div>
     </div>
   </div>
@@ -16,12 +16,21 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import QRCode from 'qrcode';
+
 
 export default defineComponent({
   name: 'FlipImage',
   props: {
     img: String,
     qr: String,
+  }, mounted(){
+    let canvas = document.getElementById('canvas-'+this.qr)
+
+    QRCode.toCanvas(canvas, 'canvas-'+this.qr, function (error:Error) {
+      if (error) console.error(error)
+      console.log('success!');
+    })
   }
 
 });
@@ -65,9 +74,13 @@ export default defineComponent({
 }
 
 .flip-box-back {
-  background-color: #555;
+  background-color:rgba(255,255,255,0.05);
   color: white;
   transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center
 }
 
 figure {

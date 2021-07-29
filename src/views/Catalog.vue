@@ -128,6 +128,7 @@ export default defineComponent({
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
+    
 
     padding: 0 15px;
     text-decoration: none;
