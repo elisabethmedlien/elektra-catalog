@@ -1,12 +1,12 @@
 <template>
 
-  <div class="flip-box">
+  <div class="flip-box" @click="flip" v-bind:id="'flip-'+id">
     <div class="flip-box-inner">
       <figure class="flip-box-front">
         <img v-bind:src='img'>
       </figure>
       <div class="flip-box-back">
-        <canvas v-bind:id="'canvas-' + qr"></canvas>
+        <canvas v-bind:id="'canvas-' + id"></canvas>
       </div>
     </div>
   </div>
@@ -22,16 +22,27 @@ export default defineComponent({
   name: 'FlipImage',
   props: {
     img: String,
-    qr: String,
-  }, mounted(){
-    let canvas = document.getElementById('canvas-'+this.qr)
+    id: String,
+  },
+  state : {
+    method: { type: Function },
+  },
+  methods: {
+    flip: function(){
+      let flip = document.getElementById('flip-'+this.id);
+      let isFlipped = flip.className.includes("flipped");
 
-    QRCode.toCanvas(canvas, 'canvas-'+this.qr, function (error:Error) {
+      isFlipped ? flip.classList.remove("flipped") : flip.classList.add("flipped");
+      
+    }
+  },
+  mounted(){
+    let canvas = document.getElementById('canvas-'+this.id)
+
+    QRCode.toCanvas(canvas, 'canvas-'+this.id, function (error:Error) {
       if (error) console.error(error)
-      console.log('success!');
     })
   }
-
 });
 
 </script>
@@ -55,7 +66,7 @@ export default defineComponent({
   transform-style: preserve-3d;
 }
 
-.flip-box:hover .flip-box-inner {
+.flipped .flip-box-inner {
   transform: rotateY(180deg);
 }
 

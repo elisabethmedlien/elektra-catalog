@@ -12,18 +12,14 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Search',
-    props: {
-    method: { type: Function },
-  },
-  data() {
-    return { value: 'search_string.' };
+  props: {
+  method: { type: Function },
   },
   methods: {
     signalInput: function(e:Event){
       const target = e.target as HTMLTextAreaElement;
       this.$emit("oninput", target.value.toLowerCase());
     }
-
   }
 });
 
@@ -40,7 +36,7 @@ input[type="search"] {
 }
 
 input[type="search"]:focus-visible {
-    outline:none;
+  outline:none;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -50,20 +46,19 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
-  .wrapper {
-    position: relative;
-    display: flex;
-    min-width: 100px;
-    border-bottom: 0.5px solid rgba(255,255,255,0.6);
-    width: 90%;
-    margin:auto;
-    padding-bottom:7px;
+.wrapper {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.6);
+  width: 90%;
+  margin:auto;
+  padding-bottom:7px;
 
-  }
+}
 
-  span {
-    margin-right: 10px;
-  }
-
+span {
+  margin-right: 10px;
+}
 
 </style>

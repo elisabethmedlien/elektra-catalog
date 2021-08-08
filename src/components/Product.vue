@@ -1,11 +1,5 @@
 <template>
-  <FlipImage :img="product.image" :qr=product.id />
-
-  <!-- <div>
-    <figure>
-      <img v-bind:src='product.image' width="150" >
-    </figure>
-  </div> -->
+  <FlipImage :img="product.image" :id=product.id />
 
   <div>
     <h2 class="product_name">{{ product.name }}</h2>

@@ -14,7 +14,8 @@
 
   <p v-else>Loading...</p> <!-- need a loading thingy here -->
 
-    
+  <FloatingIcon />
+  <Footer />
 </template>
 
 <script lang="ts">
@@ -24,6 +25,10 @@ import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
 import Search from '@/components/Search.vue';
 import Product from '@/components/Product.vue';
+import FloatingIcon from '@/components/FloatingIcon.vue';
+import Footer from '@/components/Footer.vue';
+
+
 
 import firebase from "firebase/app";
 import "@firebase/storage";
@@ -44,7 +49,9 @@ export default defineComponent({
   components: {
     Header,
     Search,
-    Product
+    Product,
+    FloatingIcon,
+    Footer
   },
   data () {
     return {

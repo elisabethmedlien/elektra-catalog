@@ -1,6 +1,5 @@
 <template>
-<h1> {{title}} </h1>
-
+  <h1> {{title}} </h1>
 </template>
 
 <script lang="ts">
@@ -23,7 +22,6 @@ h1 {
   margin-bottom: 45px;
   font-weight: 500;
   font-size:46px;
-
 }
 
 </style>
